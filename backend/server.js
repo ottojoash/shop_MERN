@@ -1,6 +1,6 @@
 //import connectDatabase from './config/database';
 const app = require('./app')
-const connectDatabase =require('./config/database')
+//const connectDatabase = require('../backend/config/database')
 
 const dotenv = require('dotenv');
 
