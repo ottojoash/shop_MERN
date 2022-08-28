@@ -6,7 +6,8 @@ const {getProducts, newProducts } = require('../controllers/productController')
 
 
 router.route('/products').get(getProducts);
-
+router.route('/product/:id').get(getSingleProduct);
 router.route(/product/new).post(newProduct);
+
 
 module.exports = router;

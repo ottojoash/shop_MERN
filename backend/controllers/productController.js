@@ -11,6 +11,7 @@ exports.newPrdouct = async(req,res,next) => {
     })
 }
 
+
 //get all products => /api/v1/products
 exports.getProducts =(req, res,next) =>{
 
@@ -23,5 +24,25 @@ exports.getProducts =(req, res,next) =>{
         count: Products.length,
         products
         //message: 'this route will show all products in database.'
+    })
+}
+
+//get single product details => /api/v1/product/id
+
+
+exports.getSingleProduct = async (req, res, next) =>{
+    const product = await Product.findById(req.parans.id);
+
+    if(!product){
+        return res.status(404).json({
+            sucess:false,
+            message: 'product not found'
+        })
+    }
+
+
+    res.status(200).json({
+        sucess:true,
+        product
     })
 }
